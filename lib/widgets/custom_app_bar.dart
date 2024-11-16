@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        _buildProfile(),
+        _buildProfile(context),
         const SizedBox(width: 11),
         _buildGreeting(context),
         const Spacer(),
@@ -43,12 +43,19 @@ class CustomAppBar extends StatelessWidget {
     );
   }
 
-  CircleAvatar _buildProfile() {
-    return CircleAvatar(
-      radius: 22,
-      backgroundColor: const Color(0xff6A8071),
-      child: Image.asset(
-        Assets.imagesAvatar,
+  Widget _buildProfile(BuildContext context) {
+    return Container(
+      height: 50,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Theme.of(context).colorScheme.tertiaryContainer,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 12.0),
+        child: Image.asset(
+          Assets.imagesAvatar,
+        ),
       ),
     );
   }

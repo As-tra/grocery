@@ -19,36 +19,38 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(),
-      padding: const EdgeInsets.symmetric(
-        vertical: 23,
-        horizontal: 32,
-      ),
-      child: Obx(() {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: sections.asMap().entries.map((ele) {
-            return ele.key != 2
-                ? GestureDetector(
-                    onTap: () {
-                      controller.updateIndex(value: ele.key);
-                    },
-                    child: SvgPicture.asset(
-                      height: 24,
-                      ele.value,
-                      colorFilter: ColorFilter.mode(
-                        controller.currentIndex.value == ele.key
-                            ? Theme.of(context).colorScheme.onSurface
-                            : const Color(0xffDBDBDB),
-                        BlendMode.srcIn,
+    return SafeArea(
+      maintainBottomViewPadding: true,
+      child: Container(
+        decoration: const BoxDecoration(),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 32,
+        ),
+        child: Obx(() {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: sections.asMap().entries.map((ele) {
+              return ele.key != 2
+                  ? GestureDetector(
+                      onTap: () {
+                        controller.updateIndex(value: ele.key);
+                      },
+                      child: SvgPicture.asset(
+                        height: 24,
+                        ele.value,
+                        colorFilter: ColorFilter.mode(
+                          controller.currentIndex.value == ele.key
+                              ? Theme.of(context).colorScheme.onSurface
+                              : const Color(0xffDBDBDB),
+                          BlendMode.srcIn,
+                        ),
                       ),
-                    ),
-                  )
-                : const SizedBox();
-          }).toList(),
-        );
-      }),
+                    )
+                  : const SizedBox();
+            }).toList(),
+          );
+        }),
+      ),
     );
   }
 }

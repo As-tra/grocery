@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery/controllers/home_controller.dart';
+import 'package:grocery/views/categories_view.dart';
+import 'package:grocery/views/details_view.dart';
+import 'package:grocery/views/profile_view.dart';
 import 'package:grocery/widgets/custom_bottom_navigation_bar.dart';
 import 'package:grocery/widgets/custom_floating_action_button.dart';
 import 'package:grocery/widgets/home_view_body.dart';
@@ -18,10 +21,10 @@ class HomeView extends StatelessWidget {
           index: controller.currentIndex.value,
           children: const [
             HomeViewBody(),
+            CategoriesView(),
             Placeholder(),
-            Placeholder(),
-            Placeholder(),
-            Placeholder(),
+            DetailsView(),
+            ProfileView(),
           ],
         ),
       ),
