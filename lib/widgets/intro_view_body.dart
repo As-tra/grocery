@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:grocery/utils/app_routing.dart';
 import 'package:grocery/utils/app_styles.dart';
 import 'package:grocery/utils/assets.dart';
 import 'package:grocery/widgets/app_logo.dart';
@@ -43,9 +45,12 @@ class IntroViewBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 64.0),
-                child: CustomButton(displayText: "Shop now"),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 64.0),
+                child: CustomButton(
+                  displayText: "Shop now",
+                  fn: () => Get.offNamed(AppRouting.home),
+                ),
               ),
             ],
           ),

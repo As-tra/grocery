@@ -1,5 +1,5 @@
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:grocery/views/homve_view.dart';
+import 'package:grocery/views/home_view.dart';
 import 'package:grocery/views/intro_view.dart';
 import 'package:grocery/views/splash_view.dart';
 
@@ -20,7 +20,7 @@ abstract class AppRouting {
     ),
     GetPage(
       name: home,
-      page: () => const HomveView(),
+      page: () => const HomeView(),
     ),
   ];
 }
