@@ -20,7 +20,7 @@ abstract class AppRouting {
     ),
     GetPage(
       name: home,
-      page: () => const HomeView(),
+      page: () =>  HomeView(),
     ),
   ];
 }

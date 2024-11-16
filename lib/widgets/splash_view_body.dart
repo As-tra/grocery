@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery/controllers/cart_controller.dart';
+import 'package:grocery/controllers/home_controller.dart';
 import 'package:grocery/utils/app_routing.dart';
 import 'package:grocery/widgets/app_logo.dart';
 
@@ -15,6 +17,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
+      Get.lazyPut(() => CartController());
+      Get.lazyPut(() => HomeController());
       Get.offNamed(AppRouting.intro);
     });
   }

@@ -11,7 +11,8 @@ class HomeViewBody extends StatelessWidget {
         padding: EdgeInsets.all(24.0),
         child: Column(
           children: [
-            CustomAppBar()
+            CustomAppBar(),
+            
           ],
         ),
       ),
