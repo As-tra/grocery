@@ -15,11 +15,12 @@ abstract class AppRouting {
     GetPage(
       name: intro,
       page: () => const IntroView(),
+      transition: Transition.circularReveal,
+      transitionDuration: const Duration(milliseconds: 600),
     ),
     GetPage(
       name: home,
       page: () => const HomveView(),
     ),
-
   ];
 }

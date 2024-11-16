@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery/utils/app_routing.dart';
-import 'package:grocery/utils/assets.dart';
-import 'package:svg_flutter/svg_flutter.dart';
+import 'package:grocery/widgets/app_logo.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -15,19 +14,15 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(microseconds: 800), () {
-      Get.toNamed(AppRouting.intro);
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.offNamed(AppRouting.intro);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CircleAvatar(
-        radius: 55,
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        child: SvgPicture.asset(Assets.iconsLogo),
-      ),
+    return const Center(
+      child: AppLogo(radius: 55),
     );
   }
 }
